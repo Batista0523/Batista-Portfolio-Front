@@ -1,13 +1,16 @@
 const db = require("../db/db.Config.js");
 
 const getAllProjects = async () => {
-  try {
-    const allProject = await db.any("SELECT * FROM projects");
-    return allProject;
-  } catch (err) {
-    return err;
-  }
-};
+    try {
+      const allProjects = await db.any("SELECT * FROM projects");
+      console.log("Data retrieved from the database:", allProjects);
+      return allProjects;
+    } catch (err) {
+      console.error("Error in getAllProjects:", err);
+      throw err;
+    }
+  };
+  
 
 const getOneproject = async (id) => {
   try {
@@ -36,17 +39,17 @@ const createProject = async (project) => {
 };
 
 const deleteProject = async (id) => {
-  try {
-    const deletedProject = await db.one(
-      "DELET FROM project WHERE id=$1 RETURNING *",
-      id
-    );
-    return deletedProject;
-  } catch (error) {
-    return error;
-  }
-};
-
+    try {
+      const deletedProject = await db.one(
+        "DELETE FROM projects WHERE id=$1 RETURNING *",
+        id
+      );
+      return deletedProject;
+    } catch (error) {
+      return error;
+    }
+  };
+  
 const updateProject = async (project) => {
   try {
     const { title, descriptions, repolink, deployedlink } = project;

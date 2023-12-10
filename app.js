@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use("/projects", projectsControllers);
 app.get("/", (req, res) => {
-  res.send("Welcome to Johnson Portfolio /projects to see data");
+  res.send("Welcome to Batista Portfolio /projects to see data");
 });
 
 app.get("*", (req, res) => {
