@@ -25,7 +25,9 @@ projects.get("/", async (req, res) => {
   if (allProjects[0]) {
     res.status(200).json({ success: true, data: { payload: allProjects } });
   } else {
-    res.status(404).json({ success: false, data: { error: "No projects found" } });
+    res
+      .status(404)
+      .json({ success: false, data: { error: "No projects found" } });
   }
 });
 
@@ -60,18 +62,12 @@ projects.delete("/:id", async (req, res) => {
 projects.put("/:id", async (req, res) => {
   const { id } = req.params;
   console.log(`PUT request for item at id ${id} received.`);
-  try {
-    const updatedProject = await updateProject(id, req.body);
-    if (updatedProject.id) {
-      res.status(200).json(updatedProject);
-    } else {
-      res
-        .status(404)
-        .json({ success: false, error: "No project found with that id" });
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(400).json({ success: false, error: "Cannot update project" });
+  const updatedProject = await updateProject(id, req.body);
+  console.log(updatedProject);
+  if (updatedProject.id) {
+    res.status(200).json(updatedProject);
+  } else {
+    res.status(404).json("No project found with that id" );
   }
 });
 

@@ -32,6 +32,7 @@ const createProject = async (project) => {
         project.deployedlink,
       ]
     );
+    
     return createdProject;
   } catch (error) {
     return error;
@@ -50,18 +51,19 @@ const deleteProject = async (id) => {
     }
   };
   
-const updateProject = async (project) => {
-  try {
-    const { title, descriptions, repolink, deployedlink } = project;
-    const updatedProject = await db.one(
-      "UPDATE project SET title=$1, descriptions=$2,repolink=$3,deployedlink=$4 WHERE id=$5 RETURNING *",
-      [title, descriptions, repolink, deployedlink]
-    );
-    return updatedProject;
-  } catch (error) {
-    return error;
-  }
-};
+  const updateProject = async (id, project) => {
+    try {
+      const { title, descriptions, repolink, deployedlink } = project;
+      const updatedProject = await db.one(
+        "UPDATE projects SET title=$1, descriptions=$2, repolink=$3, deployedlink=$4 WHERE id=$5 RETURNING *",
+        [title, descriptions, repolink, deployedlink, id]
+      );
+      return updatedProject;
+    } catch (err) {
+      return err;
+    }
+  };
+  
 
 module.exports = {
   getAllProjects,
