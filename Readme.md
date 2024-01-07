@@ -77,5 +77,5 @@ The `seed.sql` file contains sample data to initialize the database with some pr
 ## Contact
 
 - Email: elisaulbatista@pursuit.org
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/elisaul-batista/)
-- GitHub: [Your GitHub Profile](https://github.com/Batista0523)
+- LinkedIn: [ LinkedIn Profile](https://www.linkedin.com/in/elisaul-batista/)
+- GitHub: [ GitHub Profile](https://github.com/Batista0523)
