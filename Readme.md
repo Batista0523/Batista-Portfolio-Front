@@ -12,6 +12,7 @@ Welcome to the backend of the Batista Portfolio project. This section provides a
   - [Running the Backend](#running-the-backend)
   - [Database Schema](#database-schema)
   - [Seed Data](#seed-data)
+  - [Github Repository](#github-repository)
   - [Contact](#contact)
 
 ## Files and Directory Structure
@@ -73,6 +74,10 @@ The database schema is defined in the `schema.sql` file. It includes tables for 
 
 The `seed.sql` file contains sample data to initialize the database with some projects.
 
+
+## Github Repository
+- https://github.com/Batista0523/Batista-Portoflio-Front (#Front-end)
+- https://github.com/Batista0523/Batista-Portfolio-Back(#Backend)
 
 ## Contact
 

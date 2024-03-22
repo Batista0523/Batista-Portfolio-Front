@@ -1,8 +1,8 @@
 \c projects_devs;
 
-
+DROP TABLE IF EXISTS contact_forms;
 DROP TABLE IF EXISTS projects;
-
+DROP TABLE IF EXISTS app_user;
 
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
@@ -11,12 +11,12 @@ CREATE TABLE projects (
     repolink VARCHAR(255),
     deployedlink VARCHAR(255)
 );
-DROP TABLE IF EXISTS contact_forms;
 
 
-CREATE TABLE IF NOT EXISTS contact_forms (
+CREATE TABLE app_user (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    message TEXT NOT NULL
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password TEXT NOT NULL
 );
