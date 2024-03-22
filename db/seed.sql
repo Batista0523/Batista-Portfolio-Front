@@ -53,3 +53,15 @@ VALUES (
         'https://github.com/Batista0523/johnson-portoflio-front',
         'https://main--scintillating-rabanadas-3f4ae4.netlify.app/'
     );
+
+INSERT INTO app_user (
+    firstname,
+    lastname,
+    email,
+    password
+) VALUES (
+    'Elisaul',
+    'Batista',
+    'elisaulbatista@pursuit.org',
+    'Rockaway137@'
+);
