@@ -1,7 +1,7 @@
 const express = require("express");
 
 const {
-  getAllUser,
+  getAllUsers, // Corrected function name
   getOneUser,
   createUser,
   deleteUser,
@@ -22,7 +22,7 @@ users.get("/:id", async (req, res) => {
 
 users.get("/", async (req, res) => {
   console.log("GET Request received for all users.");
-  const allUsers = await getAllUsers();
+  const allUsers = await getAllUsers(); // Corrected function name
   if (allUsers[0]) {
     res.status(200).json({ success: true, data: { payload: allUsers } });
   } else {
