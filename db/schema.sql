@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS contact_forms;
 DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS app_user;
 
+
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,

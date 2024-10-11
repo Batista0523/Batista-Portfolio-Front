@@ -19,6 +19,9 @@ projects.get("/:id", async (req, res) => {
     res.status(404).json({ error: "Not Found" });
   }
 });
+
+
+
 projects.get("/", async (req, res) => {
   console.log("GET Request received for all items.");
   const allProjects = await getAllProjects();
